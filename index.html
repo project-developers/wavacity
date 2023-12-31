@@ -255,6 +255,10 @@
       onRuntimeInitialized: onRuntimeInitialized
     };
 
+    console.log(SharedArrayBuffer)
+    console.log(WebAssembly)
+    console.log(SharedArrayBuffer)
+
     if (typeof WebAssembly !== 'object' || typeof SharedArrayBuffer !== 'function') {
       Module.setStatus('Unsupported browser: use desktop Chrome or Firefox');
     } else {
