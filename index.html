@@ -255,16 +255,24 @@
       onRuntimeInitialized: onRuntimeInitialized
     };
 
-    console.log(SharedArrayBuffer)
-    console.log(WebAssembly)
-    console.log(SharedArrayBuffer)
-
+    
+      
+    }
+    if (SharedArrayBuffer) {
+        console.log(SharedArrayBuffer)
+    }
+    if (WebAssembly) {
+        console.log(WebAssembly)
+    }
+    
+if (SharedArrayBuffer) {
     if (typeof WebAssembly !== 'object' || typeof SharedArrayBuffer !== 'function') {
       Module.setStatus('Unsupported browser: use desktop Chrome or Firefox');
     } else {
       showSplash(true);
       Module.setStatus('Loading...');
     }
+}
     window.onerror = function(message, file, line, column, error) {
       console.log('Exception thrown: ' + message);
       if (message == 'Script error.' && (!error || !error.stack)) {
